@@ -151,7 +151,7 @@ google.maps.event.addDomListener(window, "load", initialize);
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>E</b>M</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">Hi</span>
+      <span class="logo-lg">Care Management</span>
     </a>
 
     <!-- Header Navbar -->
