@@ -78,7 +78,7 @@ var directionsService = new google.maps.DirectionsService();
 
 
 
-var locations = [];
+var locations = []; 
 var lat = <?php echo json_encode($lat ); ?>;
 var lng = <?php echo json_encode($lng ); ?>;
 for (var i=0;i<"<?php echo $row_count ?>";i++){
@@ -151,7 +151,7 @@ google.maps.event.addDomListener(window, "load", initialize);
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>E</b>M</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">{{ config('app.name', 'EmployeeManagement') }}</span>
+      <span class="logo-lg">Hi</span>
     </a>
 
     <!-- Header Navbar -->
@@ -170,7 +170,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                     <!-- The user image in the navbar-->
                     <img src="/bower_components/AdminLTE/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                    <span class="hidden-xs">{{ Auth::user()->username }}</span>
+                    <span class="hidden-xs">Samuel</span>
                   </a>
                   <ul class="dropdown-menu">
                     <!-- The user image in the menu -->
@@ -178,7 +178,7 @@ google.maps.event.addDomListener(window, "load", initialize);
                       <img src="/bower_components/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                       <p>
-                        Hello {{ Auth::user()->username }}
+                        Hello Samuel
                       </p>
                     </li>
                     <!-- Menu Footer-->
