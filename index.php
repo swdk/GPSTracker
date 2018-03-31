@@ -143,9 +143,127 @@ google.maps.event.addDomListener(window, "load", initialize);
 <div class="wrapper">
 
   <!-- Main Header -->
-  @include('layouts.header')
+    <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>E</b>M</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg">{{ config('app.name', 'EmployeeManagement') }}</span>
+    </a>
+
+    <!-- Header Navbar -->
+          <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+              <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+              <ul class="nav navbar-nav">
+                <!-- User Account Menu -->
+                <li class="dropdown user user-menu">
+                  <!-- Menu Toggle Button -->
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <!-- The user image in the navbar-->
+                    <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image">
+                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                    <span class="hidden-xs">{{ Auth::user()->username }}</span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <!-- The user image in the menu -->
+                    <li class="user-header">
+                      <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+
+                      <p>
+                        Hello {{ Auth::user()->username }}
+                      </p>
+                    </li>
+                    <!-- Menu Footer-->
+                    <li class="user-footer">
+                     @if (Auth::guest())
+                        <div class="pull-left">
+                          <a href="{{ route('login') }}" class="btn btn-default btn-flat">Login</a>
+                        </div>
+                     @else
+                       <div class="pull-left">
+                          <a href="{{ url('profile') }}" class="btn btn-default btn-flat">Profile</a>
+                        </div>
+                       <div class="pull-right">
+                          <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                          Logout
+                          </a>
+                       </div>
+                      @endif
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+         </form>
   <!-- Sidebar -->
-  @include('layouts.sidebar')
+          <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>{{ Auth::user()->name}}</p>
+          <!-- Status -->
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+
+      <!-- search form (Optional) -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu">
+        <!-- Optionally, you can add icons to the links -->
+        <li class="active"><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+        <li><a href="{{ url('employee-management') }}"><i class="fa fa-link"></i> <span>Employee Management</span></a></li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>System Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('system-management/department') }}">Department</a></li>
+            <li><a href="{{ url('system-management/division') }}">Division</a></li>
+            <li><a href="{{ url('system-management/country') }}">Country</a></li>
+            <li><a href="{{ url('system-management/state') }}">State</a></li>
+            <li><a href="{{ url('system-management/city') }}">City</a></li>
+            <li><a href="{{ url('system-management/report') }}">Report</a></li>
+          </ul>
+        </li>
+        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -170,7 +288,15 @@ google.maps.event.addDomListener(window, "load", initialize);
   <!-- /.content-wrapper -->
 
   <!-- Footer -->
-  @include('layouts.footer')
+    <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Anything you want
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2017 <a href="#">Company</a>.</strong> All rights reserved.
+  </footer>
   
 <!-- ./wrapper -->
 
