@@ -138,8 +138,8 @@ google.maps.event.addDomListener(window, "load", initialize);
 
 </script>
 
-<body>
-  body class="hold-transition skin-blue sidebar-mini">
+
+  <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
