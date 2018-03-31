@@ -242,7 +242,7 @@ google.maps.event.addDomListener(window, "load", initialize);
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ url('employee-management') }}"><i class="fa fa-link"></i> <span>Employee Management</span></a></li>
+        <li><a href="Management.php"><i class="fa fa-link"></i> <span>Trigger Management</span></a></li>
 
       <!-- /.sidebar-menu -->
     </section>
